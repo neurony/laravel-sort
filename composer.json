@@ -1,0 +1,50 @@
+{
+    "name": "zbiller/laravel-sort",
+    "description": "Sort Eloquent model records by their attributes or relationships",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "sort",
+        "order",
+        "eloquent",
+        "model",
+        "relations"
+    ],
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Andrei Badea",
+            "email": "zbiller@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "illuminate/contracts": "~5.7.0",
+        "illuminate/support": "~5.7.0",
+        "illuminate/database": "~5.7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.7.0",
+        "phpunit/phpunit": "~7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zbiller\\Sort\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zbiller\\Sort\\Tests\\": "tests/"
+        },
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
