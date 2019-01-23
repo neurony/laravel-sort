@@ -2,8 +2,8 @@
 
 namespace Zbiller\Sort\Tests\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Zbiller\Sort\Traits\IsSortable;
+use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
