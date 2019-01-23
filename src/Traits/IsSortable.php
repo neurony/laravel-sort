@@ -2,12 +2,12 @@
 
 namespace Zbiller\Sort\Traits;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
-use Zbiller\Sort\Exceptions\SortException;
 use Zbiller\Sort\Objects\Sort;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use Zbiller\Sort\Exceptions\SortException;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 trait IsSortable
 {
@@ -15,21 +15,21 @@ trait IsSortable
      * @var array
      */
     protected $sort = [
-        /**
+        /*
          * The query builder instance from the Sorted scope.
          *
          * @var Builder
          */
         'query' => null,
 
-        /**
+        /*
          * The data applying the "sorted" scope on a model.
          *
          * @var array
          */
         'data' => null,
 
-        /**
+        /*
          * The Zbiller\Sort\Objects\Sort instance.
          * This is used to get the sorting rules, just like a request.
          *
@@ -37,14 +37,14 @@ trait IsSortable
          */
         'instance' => null,
 
-        /**
+        /*
          * The field to sort by.
          *
          * @var string
          */
         'field' => Sort::DEFAULT_SORT_FIELD,
 
-        /**
+        /*
          * The direction to sort in.
          *
          * @var string
@@ -150,7 +150,7 @@ trait IsSortable
             $relations = $parts;
         } else {
             $field = array_last($parts);
-            $relations = (array)array_first($parts);
+            $relations = (array) array_first($parts);
         }
 
         foreach ($relations as $index => $relation) {
@@ -170,24 +170,24 @@ trait IsSortable
                 $previousModel->{$relation}()->getForeignKeyName() :
                 $previousModel->{$relation}()->getForeignKey();
 
-            if (!$this->alreadyJoinedForSorting($relationTable)) {
+            if (! $this->alreadyJoinedForSorting($relationTable)) {
                 switch (get_class($previousModel->{$relation}())) {
                     case BelongsTo::class:
-                        $this->sort['query']->join($relationTable, $modelTable . '.' . $foreignKey, '=', $relationTable . '.id');
+                        $this->sort['query']->join($relationTable, $modelTable.'.'.$foreignKey, '=', $relationTable.'.id');
                         break;
                     case HasOne::class:
-                        $this->sort['query']->join($relationTable, $modelTable . '.id', '=', $relationTable . '.' . $foreignKey);
+                        $this->sort['query']->join($relationTable, $modelTable.'.id', '=', $relationTable.'.'.$foreignKey);
                         break;
                 }
             }
         }
 
-        $alias = implode('_', $relations) . '_' . $field;
+        $alias = implode('_', $relations).'_'.$field;
 
         if (isset($relationTable)) {
             $this->sort['query']->addSelect([
-                $this->getTable() . '.*',
-                $relationTable . '.' . $field . ' AS ' . $alias
+                $this->getTable().'.*',
+                $relationTable.'.'.$field.' AS '.$alias,
             ]);
         }
 
@@ -213,7 +213,7 @@ trait IsSortable
      */
     protected function alreadyJoinedForSorting($table)
     {
-        return str_contains(strtolower($this->sort['query']->toSql()), 'join `' . $table . '`');
+        return str_contains(strtolower($this->sort['query']->toSql()), 'join `'.$table.'`');
     }
 
     /**
@@ -224,7 +224,7 @@ trait IsSortable
      */
     protected function checkSortingDirection()
     {
-        if (!in_array(strtolower($this->sort['data'][$this->sort['direction']]), array_map('strtolower', Sort::$directions))) {
+        if (! in_array(strtolower($this->sort['data'][$this->sort['direction']]), array_map('strtolower', Sort::$directions))) {
             throw SortException::invalidDirectionSupplied($this->sort['data'][$this->sort['direction']]);
         }
     }
@@ -238,7 +238,7 @@ trait IsSortable
      */
     protected function checkRelationToSortBy(Model $model, $relation)
     {
-        if (!($model->{$relation}() instanceof HasOne) && !($model->{$relation}() instanceof BelongsTo)) {
+        if (! ($model->{$relation}() instanceof HasOne) && ! ($model->{$relation}() instanceof BelongsTo)) {
             throw SortException::wrongRelationToSort($relation, get_class($model->{$relation}()));
         }
     }

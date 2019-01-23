@@ -2,11 +2,11 @@
 
 namespace Zbiller\Sort\Tests;
 
+use Zbiller\Sort\Tests\Models\Post;
+use Zbiller\Sort\Tests\Models\Author;
+use Zbiller\Sort\Tests\Models\Review;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Illuminate\Contracts\Foundation\Application;
-use Zbiller\Sort\Tests\Models\Author;
-use Zbiller\Sort\Tests\Models\Post;
-use Zbiller\Sort\Tests\Models\Review;
 
 abstract class TestCase extends Orchestra
 {
@@ -44,7 +44,7 @@ abstract class TestCase extends Orchestra
      */
     protected function setUpDatabase(Application $app)
     {
-        $this->loadMigrationsFrom(__DIR__ . '/Database/Migrations');
+        $this->loadMigrationsFrom(__DIR__.'/Database/Migrations');
     }
 
     /**
