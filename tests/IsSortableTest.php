@@ -2,7 +2,6 @@
 
 namespace Zbiller\Sort\Tests;
 
-use Zbiller\Sort\Exceptions\SortException;
 use Zbiller\Sort\Tests\Models\Post;
 
 class IsSortableTest extends TestCase
@@ -21,7 +20,6 @@ class IsSortableTest extends TestCase
 
         $this->assertEquals('Post name a', $posts->first()->name);
         $this->assertEquals('Post name z', $posts->last()->name);
-
 
         $data = [
             'sort' => 'views',

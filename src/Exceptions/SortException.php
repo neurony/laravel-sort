@@ -15,9 +15,9 @@ class SortException extends \Exception
     public static function invalidDirectionSupplied($direction)
     {
         return new static(
-            'Invalid sorting direction.' . PHP_EOL .
-            'You provided the direction: "' . $direction . '".' . PHP_EOL .
-            'Please provide one of these directions: ' . implode('|', Sort::$directions) . '.'
+            'Invalid sorting direction.'.PHP_EOL.
+            'You provided the direction: "'.$direction.'".'.PHP_EOL.
+            'Please provide one of these directions: '.implode('|', Sort::$directions).'.'
         );
     }
 
@@ -32,8 +32,8 @@ class SortException extends \Exception
     public static function wrongRelationToSort($relation, $type)
     {
         return new static(
-            'You can only sort records by the following relations: HasOne, BelongsTo.' . PHP_EOL .
-            'The relation "' . $relation . '" is of type ' . $type . ' and cannot be sorted by.'
+            'You can only sort records by the following relations: HasOne, BelongsTo.'.PHP_EOL.
+            'The relation "'.$relation.'" is of type '.$type.' and cannot be sorted by.'
         );
     }
 }
