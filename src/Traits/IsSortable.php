@@ -166,9 +166,7 @@ trait IsSortable
 
             $modelTable = $previousModel->getTable();
             $relationTable = $previousModel->{$relation}()->getModel()->getTable();
-            $foreignKey = $previousModel->{$relation}() instanceof HasOne ?
-                $previousModel->{$relation}()->getForeignKeyName() :
-                $previousModel->{$relation}()->getForeignKey();
+            $foreignKey = $previousModel->{$relation}()->getForeignKeyName();
 
             if (! $this->alreadyJoinedForSorting($relationTable)) {
                 switch (get_class($previousModel->{$relation}())) {
