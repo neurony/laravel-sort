@@ -1,6 +1,6 @@
 <?php
 
-namespace Zbiller\Sort\Tests\Models;
+namespace Neurony\Sort\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

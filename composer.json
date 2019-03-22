@@ -1,5 +1,5 @@
 {
-    "name": "zbiller/laravel-sort",
+    "name": "neurony/laravel-sort",
     "description": "Sort Eloquent model records by their attributes or relationships",
     "license": "MIT",
     "keywords": [
@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Zbiller\\Sort\\": "src/"
+            "Neurony\\Sort\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Zbiller\\Sort\\Tests\\": "tests/"
+            "Neurony\\Sort\\Tests\\": "tests/"
         },
         "classmap": [
             "tests/TestCase.php"

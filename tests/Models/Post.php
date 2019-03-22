@@ -1,8 +1,8 @@
 <?php
 
-namespace Zbiller\Sort\Tests\Models;
+namespace Neurony\Sort\Tests\Models;
 
-use Zbiller\Sort\Traits\IsSortable;
+use Neurony\Sort\Traits\IsSortable;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model

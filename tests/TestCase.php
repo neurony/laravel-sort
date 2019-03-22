@@ -1,10 +1,10 @@
 <?php
 
-namespace Zbiller\Sort\Tests;
+namespace Neurony\Sort\Tests;
 
-use Zbiller\Sort\Tests\Models\Post;
-use Zbiller\Sort\Tests\Models\Author;
-use Zbiller\Sort\Tests\Models\Review;
+use Neurony\Sort\Tests\Models\Post;
+use Neurony\Sort\Tests\Models\Author;
+use Neurony\Sort\Tests\Models\Review;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Illuminate\Contracts\Foundation\Application;
 

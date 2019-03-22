@@ -1,8 +1,8 @@
 <?php
 
-namespace Zbiller\Sort\Tests;
+namespace Neurony\Sort\Tests;
 
-use Zbiller\Sort\Tests\Models\Post;
+use Neurony\Sort\Tests\Models\Post;
 
 class IsSortableTest extends TestCase
 {

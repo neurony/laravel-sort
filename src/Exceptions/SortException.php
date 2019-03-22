@@ -1,8 +1,8 @@
 <?php
 
-namespace Zbiller\Sort\Exceptions;
+namespace Neurony\Sort\Exceptions;
 
-use Zbiller\Sort\Objects\Sort;
+use Neurony\Sort\Objects\Sort;
 
 class SortException extends \Exception
 {

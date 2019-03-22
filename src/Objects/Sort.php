@@ -1,11 +1,11 @@
 <?php
 
-namespace Zbiller\Sort\Objects;
+namespace Neurony\Sort\Objects;
 
 abstract class Sort
 {
     /**
-     * In case you apply the sorted scope on a model without an Zbiller\Sort\Objects\Sort instance as it's parameter.
+     * In case you apply the sorted scope on a model without an Neurony\Sort\Objects\Sort instance as it's parameter.
      * This constant will act as the default sort field.
      * Meaning that the IsSortable trait will look for this request name when deciding what to sort by.
      *
@@ -14,7 +14,7 @@ abstract class Sort
     const DEFAULT_SORT_FIELD = 'sort';
 
     /**
-     * In case you apply the sorted scope on a model without an Zbiller\Sort\Objects\Sort instance as it's parameter.
+     * In case you apply the sorted scope on a model without an Neurony\Sort\Objects\Sort instance as it's parameter.
      * This constant will act as the default sorting direction field.
      * Meaning that the IsSortable trait will look for this request name when deciding the sorting direction.
      *

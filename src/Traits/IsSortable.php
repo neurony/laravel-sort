@@ -1,11 +1,11 @@
 <?php
 
-namespace Zbiller\Sort\Traits;
+namespace Neurony\Sort\Traits;
 
-use Zbiller\Sort\Objects\Sort;
+use Neurony\Sort\Objects\Sort;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
-use Zbiller\Sort\Exceptions\SortException;
+use Neurony\Sort\Exceptions\SortException;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -30,7 +30,7 @@ trait IsSortable
         'data' => null,
 
         /*
-         * The Zbiller\Sort\Objects\Sort instance.
+         * The Neurony\Sort\Objects\Sort instance.
          * This is used to get the sorting rules, just like a request.
          *
          * @var Sort
@@ -99,7 +99,7 @@ trait IsSortable
     }
 
     /**
-     * Set the sort field if an Zbiller\Sort\Objects\Sort instance has been provided as a parameter for the sorted scope.
+     * Set the sort field if an Neurony\Sort\Objects\Sort instance has been provided as a parameter for the sorted scope.
      *
      * @return void
      */
@@ -111,7 +111,7 @@ trait IsSortable
     }
 
     /**
-     * Set the sort direction if an Zbiller\Sort\Objects\Sort instance has been provided as a parameter for the sorted scope.
+     * Set the sort direction if an Neurony\Sort\Objects\Sort instance has been provided as a parameter for the sorted scope.
      *
      * @return void
      */
@@ -218,7 +218,7 @@ trait IsSortable
 
     /**
      * Verify if the direction provided matches one of the directions from:
-     * Zbiller\Sort\Objects\Sort::$directions.
+     * Neurony\Sort\Objects\Sort::$directions.
      *
      * @return void
      */

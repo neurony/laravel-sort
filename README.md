@@ -1,9 +1,5 @@
 # Sort Eloquent model records by their attributes or relationships   
 
-[![Build Status](https://travis-ci.org/zbiller/laravel-sort.svg?branch=master)](https://travis-ci.org/zbiller/laravel-sort)
-[![StyleCI](https://github.styleci.io/repos/167262095/shield?branch=master)](https://github.styleci.io/repos/167262095)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zbiller/laravel-sort/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zbiller/laravel-sort/?branch=master)
-
 - [Overview](#overview)   
 - [Installation](#installation)   
 - [Usage](#usage)   
@@ -20,14 +16,14 @@ Relationship types that can be sorted by: `hasOne`, `belongsTo`
 Install the package via Composer:
 
 ```
-composer require zbiller/laravel-sort
+composer require neurony/laravel-sort
 ```
 
 # Usage
 
 ### Step 1
 
-Your Eloquent models should use the `Zbiller\Sort\Traits\IsSortable` trait.
+Your Eloquent models should use the `Neurony\Sort\Traits\IsSortable` trait.
 
 ```php
 <?php
@@ -35,7 +31,7 @@ Your Eloquent models should use the `Zbiller\Sort\Traits\IsSortable` trait.
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Zbiller\Sort\Traits\IsSortable;
+use Neurony\Sort\Traits\IsSortable;
 
 class YourModel extends Model
 {
@@ -63,7 +59,7 @@ To see how to change these parameters, please see the [Extra](#extra) section.
 
 ### Step 3
 
-Once you've used the `Zbiller\Sort\Traits\IsSortable` trait in your Eloquent models and you've supplied the correct sorting parameters, you can sort the model records by using the `sorted()` query scope present on the trait.
+Once you've used the `Neurony\Sort\Traits\IsSortable` trait in your Eloquent models and you've supplied the correct sorting parameters, you can sort the model records by using the `sorted()` query scope present on the trait.
 
 ```php
 <?php
@@ -117,7 +113,7 @@ In order to do that, you'll have to create a `Sort` object that will extend the 
 
 namespace App\Sorts;
 
-use Zbiller\Sort\Objects\Sort;
+use Neurony\Sort\Objects\Sort;
 
 class YourSort extends Sort
 {
@@ -173,9 +169,14 @@ For the example above, your URI should look like this:
 /search-something?field-to-sort-by=someRelation.some_attribute&direction-to-sort-in=asc
 ```
 
+# Credits
+
+- [Andrei Badea](https://github.com/zbiller)
+- [All Contributors](../../contributors)
+
 # Security
 
-If you discover any security related issues, please email zbiller@gmail.com instead of using the issue tracker.
+If you discover any security related issues, please email andrei.badea@neurony.ro instead of using the issue tracker.
 
 # License
 
