@@ -2,6 +2,8 @@
 
 namespace Neurony\Sort\Traits;
 
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Neurony\Sort\Objects\Sort;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
@@ -149,8 +151,8 @@ trait IsSortable
             $field = array_pop($parts);
             $relations = $parts;
         } else {
-            $field = array_last($parts);
-            $relations = (array) array_first($parts);
+            $field = Arr::last($parts);
+            $relations = (array) Arr::first($parts);
         }
 
         foreach ($relations as $index => $relation) {
@@ -199,7 +201,7 @@ trait IsSortable
      */
     protected function shouldSortByRelation()
     {
-        return str_contains($this->sort['data'][$this->sort['field']], '.');
+        return Str::contains($this->sort['data'][$this->sort['field']], '.');
     }
 
     /**
@@ -211,7 +213,7 @@ trait IsSortable
      */
     protected function alreadyJoinedForSorting($table)
     {
-        return str_contains(strtolower($this->sort['query']->toSql()), 'join `'.$table.'`');
+        return Str::contains(strtolower($this->sort['query']->toSql()), 'join `'.$table.'`');
     }
 
     /**
