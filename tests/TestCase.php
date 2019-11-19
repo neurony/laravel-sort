@@ -2,11 +2,11 @@
 
 namespace Neurony\Sort\Tests;
 
-use Neurony\Sort\Tests\Models\Post;
+use Illuminate\Contracts\Foundation\Application;
 use Neurony\Sort\Tests\Models\Author;
+use Neurony\Sort\Tests\Models\Post;
 use Neurony\Sort\Tests\Models\Review;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Illuminate\Contracts\Foundation\Application;
 
 abstract class TestCase extends Orchestra
 {
