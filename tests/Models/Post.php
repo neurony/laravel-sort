@@ -2,8 +2,8 @@
 
 namespace Neurony\Sort\Tests\Models;
 
-use Neurony\Sort\Traits\IsSortable;
 use Illuminate\Database\Eloquent\Model;
+use Neurony\Sort\Traits\IsSortable;
 
 class Post extends Model
 {
